@@ -12,7 +12,7 @@ try:
 except PackageNotFoundError:
     __version__ = "unknown"
 
-from spatial_filtrering.filters import (
+from spatial_filtering.filters import (
     box_filter,
     gaussian_filter
 )
