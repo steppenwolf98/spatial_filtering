@@ -7,7 +7,7 @@ Created on Wed Mar 11 17:29:54 2026
 
 import numpy as np
 
-from convolution import convolution_2D
+from spatial_filtering import convolution
 
 
 def box_filter (
@@ -17,7 +17,7 @@ def box_filter (
     kernel = np.ones((k_size, k_size))
     kernel = kernel / sum(kernel.ravel())
     
-    filtered_image = convolution_2D(image, kernel)
+    filtered_image = convolution.convolution_2D(image, kernel)
     
     return filtered_image
 
@@ -33,6 +33,6 @@ def gaussian_filter (
     kernel = np.exp(-(x**2 + y**2) / (2 * sigma**2))  
     kernel = kernel / sum(kernel.ravel())
     
-    filtered_image = convolution_2D(image, kernel)
+    filtered_image = convolution.convolution_2D(image, kernel)
     
     return filtered_image
